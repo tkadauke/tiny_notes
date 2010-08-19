@@ -4,7 +4,7 @@ class NoteItemStatusesController < ApplicationController
   def update
     @note.clear_item_statuses_for(current_visitor)
     
-    params[:note_item_ids].each do |id|
+    (params[:note_item_ids] || []).each do |id|
       status = NoteItemStatus.create(:note => @note, :visitor => current_visitor, :item_id => id, :status => true)
     end
     
