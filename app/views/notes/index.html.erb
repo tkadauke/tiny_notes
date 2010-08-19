@@ -3,6 +3,8 @@
 <% if @notes.empty? %>
   <p><%= t(".nothing_found") %></p>
 <% else %>
+  <%= will_paginate @notes %>
+
   <ul class="notes">
     <% @notes.each do |note| %>
       <li>
@@ -11,6 +13,8 @@
       </li>
     <% end %>
   </ul>
+
+  <%= will_paginate @notes %>
 <% end %>
 
 <p><%= link_to t(".new_note"), new_note_path %></p>
