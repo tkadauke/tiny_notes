@@ -2,3 +2,4 @@ rails -v 2.3.3
 tiny_core
 RedCloth
 will_paginate
+less
