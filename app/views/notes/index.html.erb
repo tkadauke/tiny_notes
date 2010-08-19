@@ -1,0 +1,16 @@
+<h2><%= t(".recent_notes") %></h2>
+
+<% if @notes.empty? %>
+  <p><%= t(".nothing_found") %></p>
+<% else %>
+  <ul class="notes">
+    <% @notes.each do |note| %>
+      <li>
+        <strong><%= link_to note.title, note_path(note) %></strong> <span class="date"><%= t(".time_ago", :time => time_ago_in_words(note.created_at)) %></span>
+        <p><%= truncate(note.text, :length => 250) %></p>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p><%= link_to t(".new_note"), new_note_path %></p>

@@ -1,0 +1,4 @@
+<% tabs(:selected => selected) do |t| %>
+  <% t.tab :note, t(".note"), note_path(@note) %>
+  <% t.tab :edit, t(".edit"), edit_note_path(@note) %>
+<% end %>

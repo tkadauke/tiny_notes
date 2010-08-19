@@ -1,0 +1,48 @@
+--- 
+en: 
+  breadcrumb: 
+    edit: Edit
+    home: Home
+    new: New
+    notes: Notes
+  flash: 
+    notice: 
+      created_note: "Successfully created note"
+      destroyed_note: "Successfully deleted note"
+      updated_note: "Successfully updated note"
+  layouts: 
+    close_flash: Close
+    github_project_page: "Github project page"
+    guest_greeter: "Welcome, Guest"
+    home: Home
+    notes: Notes
+    quick_links: "Quick Links"
+    subtitle: "Organize release notes"
+    unknown_build: "Unknown build"
+    version: "Version {{version}}, Revision {{revision}}"
+    you_are_here: "You are here"
+  notes: 
+    edit: 
+      edit_note: "Edit note {{note}}"
+    form: 
+      could_not_create_note: "Could not create note"
+      save_note: "Save note"
+      text: Text
+      title: Title
+      use_textile: "Use Textile for the note's text. Unnumbered list items will be turned into check boxes."
+    index: 
+      new_note: "New note"
+      nothing_found: "Nothing found"
+      recent_notes: "Recent notes"
+      time_ago: "{{time}} ago"
+    new: 
+      new_note: "New note"
+    show: 
+      all: "Select all"
+      cancel: Cancel
+      edit_note: "Edit note"
+      none: "Select none"
+      save: Save
+    tabs: 
+      edit: Edit
+      note: Note

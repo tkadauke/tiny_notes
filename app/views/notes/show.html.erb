@@ -1,0 +1,15 @@
+<h2><%= @note.title %></h2>
+
+<%= render :partial => "tabs", :locals => { :selected => :note } %>
+
+<div class="note">
+  <% form_tag note_note_item_statuses_path(@note), :method => :put do %>
+    <%= render_note(@note.text) %>
+    
+    <p>
+      <%= submit_tag t(".save") %> | <%= link_to t(".cancel"), note_path(@note) %> ||
+      <%= link_to_function t(".all"), %{$$('.note input[type="checkbox"]').each(function(element) { element.checked = true }); $$('.note li').each(function(li) { li.className = 'done'; }) } %> |
+      <%= link_to_function t(".none"), %{$$('.note input[type="checkbox"]').each(function(element) { element.checked = false }); $$('.note li').each(function(li) { li.className = ''; }) } %>
+    </p>
+  <% end %>
+</div>

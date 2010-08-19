@@ -1,0 +1,33 @@
+#canvas {
+  ul.notes {
+    li {
+      margin-bottom: 1em;
+      
+      p {
+        margin: 0.3em 0 1em 1em !important;
+      }
+      
+      span.date {
+        font-size: 0.9em;
+        color: #aaa;
+        font-style: italic;
+        margin-left: 1em;
+      }
+    }
+  }
+  
+  div.note {
+    li {
+      position:relative;
+      margin-left: 2.5em;
+
+      input[type="checkbox"] {
+        position:absolute;
+        margin-left: -1.5em;
+      }
+    }
+    li.done label {
+      text-decoration: line-through;
+    }
+  }
+}
