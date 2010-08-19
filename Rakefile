@@ -11,5 +11,5 @@ require 'tasks/rails'
 
 begin
   require 'i18n_tools/tasks'
-rescue
+rescue LoadError
 end
