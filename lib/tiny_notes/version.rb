@@ -1,6 +1,6 @@
 module TinyNotes
   module Version
-    extend TinyCore::Build
+    include TinyCore::Build
     extend self
     
     def version
