@@ -4,3 +4,4 @@ tiny_core_users -v 0.0.1
 RedCloth
 will_paginate
 less
+authlogic
