@@ -12,5 +12,11 @@
     <%= f.text_area :text, :cols => 80, :rows => 20 %>
   </p>
   
+  <p class="form_item">
+    <%= f.check_box :public %>
+    <span class="checkbox-label"><%= f.label :public, t(".public") %></span>
+    <span class="desc"><%= t(".publicly_visible") %></span>
+  </p>
+  
   <p><%= f.submit t(".save_note") %></p>
 <% end %>

@@ -1,0 +1,34 @@
+<h2><%= t('.create_new_account') %></h2>
+
+<% form_for @user, :html => { :class => 'form' } do |f| %>
+  <%= f.error_messages :header_message => t('.could_not_register_user') %>
+
+  <p class="form_item">
+    <span class="label"><%= f.label :full_name, t('.full_name'), :class => 'required' %></span>
+    <%= f.text_field :full_name %>
+  </p>
+  
+  <p class="form_item">
+    <span class="label"><%= f.label :email, t('.email_address'), :class => 'required' %></span>
+    <span class="desc"><%= t('.the_email_address_is_used_for_notifications') %></span>
+    <%= f.text_field :email %>
+  </p>
+  
+  <p class="form_item">
+    <span class="label"><%= f.label :password, t('.password'), :class => 'required' %></span>
+    <%= f.password_field :password %>
+  </p>
+  
+  <p class="form_item">
+    <span class="label"><%= f.label :password_confirmation, t('.password_confirmation'), :class => 'required' %></span>
+    <span class="desc"><%= t('.please_repeat_the_password_exactly_as_above') %></span>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  
+  <p>
+    <%= f.submit t('.create_account') %>
+    <% unless logged_in? %>
+      | <%= link_to t('.login_instead'), login_path %>
+    <% end %>
+  </p>
+<% end %>

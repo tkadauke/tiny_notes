@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
+require "authlogic/test_case"
 
 class ActiveSupport::TestCase
   # Transactional fixtures accelerate your tests by wrapping each test method
@@ -35,4 +36,21 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+end
+
+class ActionController::TestCase
+  setup :activate_authlogic
+  
+  def login_with(user)
+    UserSession.create(user)
+  end
+  
+  def logout
+    UserSession.find.destroy
+  end
+  
+  def assert_access_denied
+    assert_response :redirect
+    assert_equal 'Access denied', flash[:error]
+  end
 end

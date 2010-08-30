@@ -15,7 +15,9 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  config.gem "tiny_core"
+  config.gem "tiny_core", :version => '0.0.2'
+  config.gem "tiny_core_users", :version => '0.0.1'
+  config.gem "authlogic"
   config.gem "will_paginate"
   config.gem "RedCloth"
 

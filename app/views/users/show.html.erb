@@ -1,0 +1,16 @@
+<h2><%= t('.users_profile', :full_name => @user.full_name) %></h2>
+
+<dl>
+  <dt><%= t('.full_name') %></dt>
+  <dd><%= @user.full_name %></dd>
+  <% if current_user.can_see_email?(@user) %>
+    <dt><%= t('.email') %></dt>
+    <dd><%= @user.email %></dd>
+  <% end %>
+</dl>
+
+<% if current_user.can_edit_profile?(@user) %>
+  <ul class="action-list">
+    <li><%= link_to t('.edit_profile'), edit_user_path(@user) %></li>
+  </ul>
+<% end %>

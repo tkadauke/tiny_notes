@@ -1,10 +1,17 @@
 --- 
 en: 
+  admin: 
+    index: 
+      admin_area: "Admin area"
+      users: Users
   breadcrumb: 
+    admin: Admin
     edit: Edit
     home: Home
+    mine: Mine
     new: New
     notes: Notes
+    users: Users
   flash: 
     notice: 
       created_note: "Successfully created note"
@@ -15,6 +22,7 @@ en:
     github_project_page: "Github project page"
     guest_greeter: "Welcome, Guest"
     home: Home
+    my_notes: "My Notes"
     notes: Notes
     quick_links: "Quick Links"
     subtitle: "Organize release notes"
@@ -26,23 +34,33 @@ en:
       edit_note: "Edit note {{note}}"
     form: 
       could_not_create_note: "Could not create note"
+      public: Public
+      publicly_visible: "Check this box if you want to share your note with the world"
       save_note: "Save note"
       text: Text
       title: Title
       use_textile: "Use Textile for the note's text. Unnumbered list items will be turned into check boxes."
     index: 
-      new_note: "New note"
+      all_notes: "Public Notes"
+    list: 
+      new_note: "New Note"
       nothing_found: "Nothing found"
-      recent_notes: "Recent notes"
       time_ago: "{{time}} ago"
+    mine: 
+      my_notes: "My Notes"
     new: 
       new_note: "New note"
     show: 
       all: "Select all"
       cancel: Cancel
-      edit_note: "Edit note"
       none: "Select none"
       save: Save
     tabs: 
       edit: Edit
       note: Note
+  shared: 
+    filter: 
+      filter: Filter
+  start: 
+    index: 
+      recent_notes: "Recent Notes"

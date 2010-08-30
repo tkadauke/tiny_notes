@@ -1,7 +1,9 @@
 class Note < ActiveRecord::Base
+  belongs_to :user
   has_many :note_item_statuses
   
   named_scope :recent, :order => 'created_at DESC'
+  named_scope :recent_public, :conditions => { 'public' => true }, :order => 'created_at DESC'
   
   validates_presence_of :title, :text
   
