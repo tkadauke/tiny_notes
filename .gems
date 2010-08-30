@@ -1,6 +1,7 @@
 rails -v 2.3.3
 tiny_core -v 0.0.2
 tiny_core_users -v 0.0.1
+tiny_core_accounts -v 0.0.2
 RedCloth
 will_paginate
 less

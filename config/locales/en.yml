@@ -2,9 +2,11 @@
 en: 
   admin: 
     index: 
+      accounts: Accounts
       admin_area: "Admin area"
       users: Users
   breadcrumb: 
+    accounts: Accounts
     admin: Admin
     edit: Edit
     home: Home
@@ -63,4 +65,9 @@ en:
       filter: Filter
   start: 
     index: 
+      create_account: "Create account"
+      login: Login
+      manage_account: "Manage account"
+      quick_links: "Quick links"
       recent_notes: "Recent Notes"
+      signup: Signup

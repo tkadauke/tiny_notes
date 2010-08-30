@@ -1,7 +1,7 @@
 class NotesController < ApplicationController
   before_filter :login_required, :only => [ :mine, :new, :edit, :create, :update, :destroy ]
   active_tab :notes, :except => :mine
-  active_tab :mine, :only => :mine
+  active_tab :mine, :only => [:mine, :new, :edit]
   
   def index
     @notes = Note.recent_for(current_user).paginate(:page => params[:page])
@@ -29,6 +29,7 @@ class NotesController < ApplicationController
   
   def create
     @note = current_user.notes.build(params[:note])
+    @note.account = current_user.current_account
     if @note.save
       flash[:notice] = I18n.t("flash.notice.created_note")
       redirect_to note_path(@note)

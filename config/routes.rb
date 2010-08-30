@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.resources :users
+    admin.resources :accounts
   end
 
   map.admin '/admin', :controller => 'admin'
@@ -10,6 +11,9 @@ ActionController::Routing::Routes.draw do |map|
   end
 
   map.resources :users
+  map.resources :accounts, :member => { :switch => :post } do |accounts|
+    accounts.resources :user_accounts
+  end
   map.resources :password_resets
   
   map.login '/login', :controller => 'user_sessions', :action => 'new', :conditions => { :method => :get }

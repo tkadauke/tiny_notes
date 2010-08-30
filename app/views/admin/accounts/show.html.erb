@@ -1,0 +1,17 @@
+<h2><%= t('.account', :account => @account.name) %></h2>
+
+<%= render :partial => "tabs", :locals => { :selected => :information } %>
+
+<%= render :partial => "/accounts/info" %>
+
+<h3><%= t(".users") %></h3>
+
+<% if @account.users.empty? %>
+  <p><%= t('.no_users') %></p>
+<% else %>
+  <ul class="asterisk">
+    <% @account.users.each do |user| %>
+      <li><%= link_to user.full_name, user_path(user) %> (<%= t("account.role.#{user.user_account_for(@account).role}") %>)</li>
+    <% end %>
+  </ul>
+<% end %>

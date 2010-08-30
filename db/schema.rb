@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100830205450) do
+ActiveRecord::Schema.define(:version => 20100830221448) do
+
+  create_table "accounts", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "note_item_statuses", :force => true do |t|
     t.integer  "note_id"
@@ -29,11 +35,21 @@ ActiveRecord::Schema.define(:version => 20100830205450) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.boolean  "public",     :default => true
+    t.integer  "account_id"
   end
 
+  add_index "notes", ["account_id"], :name => "index_notes_on_account_id"
   add_index "notes", ["created_at"], :name => "index_notes_on_created_at"
   add_index "notes", ["public"], :name => "index_notes_on_public"
   add_index "notes", ["user_id"], :name => "index_notes_on_user_id"
+
+  create_table "user_accounts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "account_id"
+    t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "full_name",                          :null => false
@@ -53,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20100830205450) do
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "current_account_id"
   end
 
   create_table "visitors", :force => true do |t|

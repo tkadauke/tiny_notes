@@ -1,10 +1,11 @@
 class Note < ActiveRecord::Base
   belongs_to :user
+  belongs_to :account
   has_many :note_item_statuses
   
   named_scope :recent, :order => 'created_at DESC'
   named_scope :recent_public, :conditions => { 'public' => true }, :order => 'created_at DESC'
-  named_scope :recent_for_user, lambda { |user| { :conditions => ['public = ? or user_id = ?', true, user.id], :order => 'created_at DESC' } }
+  named_scope :recent_for_user, lambda { |user| { :conditions => ['public = ? or user_id = ? or account_id in (?)', true, user.id, user.account_ids], :order => 'created_at DESC' } }
   
   validates_presence_of :title, :text
   

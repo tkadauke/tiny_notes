@@ -1,3 +1,18 @@
+<h2><%= t(".quick_links") %></h2>
+
+<ul class="asterisk">
+  <% if logged_in? %>
+    <% if current_user.current_account %>
+      <li><%= link_to t(".manage_account"), account_path(current_user.current_account) %></li>
+    <% else %>
+      <li><%= link_to t(".create_account"), new_account_path %></li>
+    <% end %>
+  <% else %>
+    <li><%= link_to t(".login"), login_path %></li>
+    <li><%= link_to t(".signup"), new_user_path %></li>
+  <% end %>
+</ul>
+
 <h2><%= t(".recent_notes") %></h2>
 
 <%= render :partial => "/notes/list" %>
