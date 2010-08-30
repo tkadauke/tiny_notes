@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   active_tab :mine, :only => :mine
   
   def index
-    @notes = Note.recent_public.paginate(:page => params[:page])
+    @notes = Note.recent_for(current_user).paginate(:page => params[:page])
   end
   
   def mine
